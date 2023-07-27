@@ -26,7 +26,7 @@ title: Welcome to Slidev
 
 # The Generative Learning Trilemma
 
-<br/>
+<p></p>
 
 <p class="text-2xl text-justify">
 In the past decade, a plethora of deep generative models has been developed for various domains such as images, audios, point clouds and graphs.
@@ -109,6 +109,29 @@ to address this issue, this study proposed Denoising Diffusion GAN
 
 <img class="m-auto w-3/4" src="/img/denoising-distribution.png"/>
 
+<div class="text-2xl grid grid-cols-2">
+
+<p class="ml-40">
+
+If diffusion process is
+</p>
+
+<p>
+
+1. Markov chain
+2. Normal distribution
+
+</p>
+
+</div>
+
+
+<p class="text-2xl m-20 text-justify">
+
+And when the step size of the denoising process is **EXTREMELY SMALL**, the denoising process will also be normally distributed.
+</p>
+
+
 <style>
 h1 {
   background-color: #2B90B6;
@@ -122,11 +145,32 @@ h1 {
 </style>
 
 ---
-layout: image
-image: /img/pipeline.gif
----
 
-# Method
+# Imprecise Estimation
+
+<span class="text-2xl"> When close to the normal distribution</span>
+
+<div class="grid grid-cols-2">
+
+<div>
+
+<img class="" src="/img/dp-a.png"/>
+<img v-click class="w-7/8" src="/img/dp-b.png"/>
+
+</div>
+
+<div>
+
+<img v-click class="w-7/8" src="/img/dp-c.png"/>
+
+<p v-after=1 class="text-xl ml-10 text-justify">
+When the current state is close to the normal distribution,
+there will be multiple clean data corresponding to the same noisy data.
+</p>
+
+</div>
+
+</div>
 
 <style>
 h1 {
@@ -143,6 +187,8 @@ h1 {
 ---
 
 # Denoising Diffusion GAN
+
+Implicitly Modeling the Denoising Process with GANs
 
 <div class="grid grid-cols-2">
 
@@ -162,7 +208,7 @@ p_{\theta}(x_{t-1}|x_t):=&\int p_{\theta}(x_0|x_t)q(x_{t-1}|x_t,x_0)dx_0\\
 
 $$\begin{split}
 \underset{\Large\Downarrow}{\sum_{t \ge 1}\mathbb{E}_{q(x_t)}[D_{KL}(q(x_{t-1}|x_t)||p_{\theta}(x_{t-1}|x_t))]+C}\\
-\underset{\theta}{min}\sum_{t \ge 1}\mathbb{E}_{q(x_t)}[D_{adv}(q(x_{t-1}|x_t)||p_{\theta}(x_{t-1}|x_t))]
+\underset{\theta}{min}\;\underset{\phi}{max}\sum_{t \ge 1}\mathbb{E}_{q(x_t)}[D_{\phi}(q(x_{t-1}|x_t)||p_{\theta}(x_{t-1}|x_t))]
 \end{split}$$
 
 </p>
@@ -186,6 +232,43 @@ h1 {
 </style>
 
 ---
+layout: image
+image: /img/pipeline.gif
+---
+
+# Pipeline
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
+
+# Experiments
+
+<img class="m-auto w-2/3" src="/img/comparison.png"/>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
 
 # Experiments
 
@@ -194,23 +277,33 @@ h1 {
 <img class="w-3/4 m-auto" src="/img/trade-off.png" />
 
 ---
-layout: two-cols
----
-
-
-<p class="text-2xl text-center">Ablation Studies on CIFAR-10.</p>
-
-<img class="w-8/9 m-auto" src="/img/mode-coverage.png" />
-
-<br/>
 
 # Experiments
 
-::right::
+<div class="grid grid-cols-2">
+
+<div>
+
+<p class="text-2xl text-center">Ablation Studies on CIFAR-10.</p>
+
+<img class="w-7/8 m-auto" src="/img/ablation.png" />
+
+- **direct denoising**: 
+  $G_{\theta}$ directly output denoised samples $x_{t−1}$
+- **noise generation**: 
+  $G_{\theta}$ output the noise $\epsilon_t$ 
+
+</div>
+
+<div>
 
 <p class="text-2xl text-center">Mode Coverage</p>
 
 <img class="w-8/9 m-auto" src="/img/mode-coverage.png" />
+
+</div>
+
+</div>
 
 <style>
 h1 {
