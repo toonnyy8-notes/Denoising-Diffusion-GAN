@@ -111,25 +111,23 @@ to address this issue, this study proposed Denoising Diffusion GAN
 
 <div class="text-2xl grid grid-cols-2">
 
-<p class="ml-40">
+<div class="ml-40">
 
 If diffusion process is
-</p>
+</div>
 
-<p>
+<div>
 
 1. Markov chain
 2. Normal distribution
-
-</p>
+</div>
 
 </div>
 
-
-<p class="text-2xl m-20 text-justify">
+<div class="text-2xl mr-20 ml-20 text-justify">
 
 And when the step size of the denoising process is **EXTREMELY SMALL**, the denoising process will also be normally distributed.
-</p>
+</div>
 
 
 <style>
