@@ -240,11 +240,10 @@ h1 {
 </style>
 
 ---
-layout: image
-image: /img/pipeline.gif
----
 
 # Pipeline
+
+<img src="/img/pipeline.gif" />
 
 <style>
 h1 {
@@ -256,14 +255,22 @@ h1 {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+img{
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  width:100%; 
+  height:100%;
+  object-fit: cover;
+  z-index: -1;
+}
 </style>
 
 ---
-layout: image
-image: /img/pipeline.jpg
----
 
 # Pipeline
+
+<img src="/img/pipeline.jpg" />
 
 <style>
 h1 {
@@ -274,6 +281,15 @@ h1 {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+img{
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  width:100%; 
+  height:100%;
+  object-fit: cover;
+  z-index: -1;
 }
 </style>
 
