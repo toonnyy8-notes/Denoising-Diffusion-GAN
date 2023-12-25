@@ -18,7 +18,7 @@ download: true
 ---
 
 ## Tackling the Generative Learning Trilemma with 
-# Denoising Diffusion GANs
+# [Denoising Diffusion GANs](https://nvlabs.github.io/denoising-diffusion-gan/)
 
 #### Zhisheng Xiao$^1$, Karsten Kreis$^2$, Arash Vahdat$^2$  
 #### $^1$The University of Chicago, $^2$NVIDIA
