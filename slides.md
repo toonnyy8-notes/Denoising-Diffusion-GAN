@@ -12,7 +12,9 @@ info: |
 drawings:
   persist: false
 transition: slide-left
-title: Welcome to Slidev
+title: Denoising-Diffusion-GAN
+mdc: true
+download: true
 ---
 
 ## Tackling the Generative Learning Trilemma with 
@@ -21,6 +23,14 @@ title: Welcome to Slidev
 #### Zhisheng Xiao$^1$, Karsten Kreis$^2$, Arash Vahdat$^2$  
 #### $^1$The University of Chicago, $^2$NVIDIA
 
+### ICLR 2022
+
+<div class="abs-br m-6 flex gap-2">
+  <a href="https://github.com/toonnyy8-notes/Denoising-Diffusion-GAN/" target="_blank" alt="GitHub"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
+  </a>
+</div>
 
 ---
 
@@ -249,6 +259,25 @@ h1 {
 </style>
 
 ---
+layout: image
+image: /img/pipeline.jpg
+---
+
+# Pipeline
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
 
 # Experiments
 
@@ -273,6 +302,18 @@ h1 {
 <span class="text-2xl">Sample Quality vs Sampling Time Trade-off.</span>
 
 <img class="w-3/4 m-auto" src="/img/trade-off.png" />
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 ---
 
